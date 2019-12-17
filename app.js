@@ -2,6 +2,9 @@ const message = document.querySelector('message');
 const guess = document.querySelector('input');
 const button = document.querySelector('button');
 let inplay = false;
+let scramble ='';
+let scrambled = '';
+
 const myArray = ['Christmas', 'holiday', 'vacation', 'presents', 'family'];
 
 button.addEventListener('click', function() {
@@ -10,6 +13,16 @@ button.addEventListener('click', function() {
         inplay = true;
         button.innerHTML = 'Guess';
         guess.classList.toggle('hidden')
+        scramble= createWord();
+        scrambled = randomArray(scramble.split('')).join('');
+        message.innerHTML = scrambled;
+    } else {
+        let tempGuess = guess.value;
+        if (tempGuess === scramble) {
+
+        } else {
+            
+        }
     }
 
 })
